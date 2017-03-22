@@ -72,6 +72,7 @@ struct sigaltstack;
 #include <linux/list.h>
 #include <linux/bug.h>
 #include <linux/sem.h>
+#include <linux/prinfo.h>
 #include <asm/siginfo.h>
 #include <linux/unistd.h>
 #include <linux/quota.h>
@@ -846,4 +847,5 @@ asmlinkage long sys_process_vm_writev(pid_t pid,
 asmlinkage long sys_kcmp(pid_t pid1, pid_t pid2, int type,
 			 unsigned long idx1, unsigned long idx2);
 asmlinkage long sys_finit_module(int fd, const char __user *uargs, int flags);
+asmlinkage long sys_mycall(struct prinfo *buf, int *nr);
 #endif
